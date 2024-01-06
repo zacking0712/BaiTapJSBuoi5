@@ -1,0 +1,80 @@
+Mô hình 3 khối 
+
+Bài 1: QUẢN LÝ TUYỂN SINH
+
+-----Đầu vào----- 
+    + Điểm chuẩn
+    + Điểm môn thứ 1, thứ 2, thứ 3
+    + Điểm Khu Vực
+    + Điểm Ưu Tiên
+-----Các Bước Xử Lý-----
+    + Tạo sự kiện onclick vào thẻ kết quả
+    + Tìm tới thẻ chứa giá trị của điểm chuẩn, điểm thứ 1, thứ 2, thứ 3, điểm khu vực, điểm ưu tiên
+    + Xét điều kiện giá trị của để tìm ra giá trị của Khu Vực và Điểm Ưu Tiên
+    + Xét điều kiện giá trị của Điểm Tổng Kết so với điểm chuẩn để coi học sinh đậu/rớt
+    + Phép tính : 
+        * diemTongUuTien = diemUuTien + diemKhuVuc
+        * diemTongKet = diemTongUuTien + diemThuNhat + diemThuNhat + diemThuBa
+    + In kết quả ra một thẻ bằng hàm document.getElementById('...').innerHTML
+-----Đầu ra-----
+    + Điểm Thi sinh
+    + Thông báo đậu/rớt
+
+Bài 2: Tính tiền điện
+
+-----Đầu vào----- 
+    + Họ Tiên
+    + Số KW tiêu thụ
+-----Các Bước Xử Lý-----
+    + Tạo sự kiện onclick vào thẻ kết quả
+    + Tìm tới thẻ chứa giá trị của số KW tiêu thụ
+    + Xét điều kiện giá trị của số KW tiêu thụ theo đề bài
+    + Phép tính : 
+        * TH1: (50 kW đầu) soTienDien = soKW * 500;
+        * TH2: (50 kW kế) soTienDien = (soKW - 50) * 650 + 50 * 500
+        * TH3: (100 kW kế) soTienDien = (soKW - 100) * 850 + 650 * 50 + 500 * 50
+        * TH4: (150 kW kế) soTienDien = (soKW - 150) * 1100 + 100 * 850 + 50 * 650 + 50 * 500
+        * TH5: (Còn Lại) soTienDien = (soKW - 350) * 1300 + 150 * 1100 + 100 * 850 + 50 * 650 + 50 * 500;
+    + In kết quả ra một thẻ bằng hàm document.getElementById('...').innerHTML
+-----Đầu ra-----
+    + Số tiền tiêu thụ số KW tương ứng
+
+
+Bài 3: Tính Thuế Thu Nhập Cá Nhân
+
+-----Đầu vào----- 
+    + Tổng Thu Nhập Của Năm
+    + Số Người Phụ Thuộc
+-----Các Bước Xử Lý-----
+    + Tạo sự kiện onclick vào thẻ kết quả
+    + Tìm tới thẻ chứa giá trị của Tổng Thu Nhập Năm và Số Người Phụ Thuộc
+    + Xét điều kiện giá trị của Tổng Thu Nhập Năm và Số Người Phụ Thuộc
+    + Phép tính :
+        * Thu Nhập Chịu Thuế = Tổng Thu Nhập - 4000000 - Số Người Phụ Thuộc * 1600000;
+    + So sánh Thu Nhập Chịu Thuế với đề bài rồi đưa ra kết quả
+    + In kết quả ra một thẻ bằng hàm document.getElementById('...').innerHTML
+-----Đầu ra-----
+    + Phần trăm thuế cá nhân 
+
+Bài 4: Tính tiền cáp
+
+-----Đầu vào----- 
+    + Mã Khách Hàng
+    + Loại Khách Hàng
+    + Số Kết Nối
+    + Số Kênh Cao Cấp
+-----Các Bước Xử Lý-----
+    + Tạo sự kiện onclick vào thẻ kết quả
+    + Tìm tới thẻ chứa giá trị Loại Khách Hàng để xét điều kiện để ẩn hoặc hiện input Số Kết Nối
+    + Tìm tới thẻ chưa giá trị của Số Kết Nối (nếu Loại Khách hàng là DN) và Số Kênh Cao Cấp
+    + Phép tính : 
+        * Doanh Nghiệp: 
+            - Hoá Đơn = 15 + (Số Kết Nối - 10) * 5 + 10 * 75 + 50 * Số Kênh Cao Cấp (Khi số kết nối lớn hơn 10)
+            - Hoá Đơn = 15 + Số Kết Nối * 75 + 50 * Số Kênh Cao Cấp;
+        * Nhà Dân: Hoá Đơn = 4.5 + 20.5 + 7.5 * Số Kênh Cao Cấp;
+    + In kết quả ra một thẻ bằng hàm document.getElementById('...').innerHTML
+-----Đầu ra-----
+    + Hoá Đơn có thông tin: 
+        * Mã Khách Hàng
+        * Loại Khách Hàng
+        * Số tiền hoá đơn

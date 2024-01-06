@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Buổi 4</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      h1 {
+        padding: 20px 0;
+      }
+
+      h2 {
+        margin-top: 20px;
+        color: #198754;
+      }
+
+      .accordion-header .collapsed {
+        border: 2px solid #198754;
+        border-radius: 20px !important;
+      }
+
+      select {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+        padding-left: 0.75rem !important;
+        font-size: 1rem !important;
+        border-radius: var(--bs-border-radius-sm);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <h1 style="background-color: yellow; display: flex; justify-content: center; align-items: center; font-size: 100px; height: 100vh;">JavaScript Buổi 4</h1> -->
+
+    <div class="container">
+      <h1 class="text-center text-success">Bài tập JS buổi 5</h1>
+      <!-- Bài tập Quản Lý Tuyển Sinh -->
+
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFirst"
+              aria-expanded="false"
+              aria-controls="flush-collapseFirst"
+            >
+              <h2>Quản Lý Tuyển Sinh</h2>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFirst"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <!-- bs5-form-input -->
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label">Điểm Chuẩn</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="diemChuan"
+                  aria-describedby="helpId"
+                  placeholder="Điểm Chuẩn"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label">Khu Vực</label>
+                <select
+                  id="khuVuc"
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                >
+                  <option selected>Chọn Khu Vực</option>
+                  <option value="2">A</option>
+                  <option value="1">B</option>
+                  <option value="0.5">C</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Điểm Ưu Tiên</label
+                >
+                <select
+                  id="diemUuTien"
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                >
+                  <option selected>Chọn Đối Tượng</option>
+                  <option value="0">0</option>
+                  <option value="2.5">1</option>
+                  <option value="1.5">2</option>
+                  <option value="1">3</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Điểm môn thứ 1</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="monThi1"
+                  aria-describedby="helpId"
+                  placeholder="Điểm môn thứ 1"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Điểm môn thứ 2</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="monThi2"
+                  aria-describedby="helpId"
+                  placeholder="Điểm môn thứ 2"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Điểm môn thứ 3</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="monThi3"
+                  aria-describedby="helpId"
+                  placeholder="Điểm môn thứ 3"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+              <!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+              <!-- ----------------------------------------------------------------------------------------------------------------------------->
+              <div class="mb-3">
+                <button class="btn btn-dark" id="btnKetQua1">Kết quả</button>
+              </div>
+              <div class="bg-success bg-opacity-50 p-4" id="ketQua1"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+      <!-- Tính tiền điện -->
+
+      <!-- bs5-form-input -->
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              <h2>Tính Tiền Điện</h2>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Nhập Họ và Tên</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="hoTen"
+                  aria-describedby="helpId"
+                  placeholder="Nhập Họ và Tên"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Nhập Số KW Tiêu Thụ</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="soKW"
+                  aria-describedby="helpId"
+                  placeholder="Nhập Số KW Tiêu Thụ"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <!-- ----------------------------------------------------------------------------------------------------------------------------->
+              <div class="mb-3">
+                <button class="btn btn-dark" id="btnKetQua3">Tổng</button>
+              </div>
+              <div class="bg-success bg-opacity-50 p-4" id="ketQua3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- -------------------------------------------------------------------------------------------------------- -->
+
+      <!-- Bài tập tính thuế thu nhập cá nhân -->
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFour"
+              aria-expanded="false"
+              aria-controls="flush-collapseFour"
+            >
+              <h2>Tính thuế thu nhập cá nhân</h2>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFour"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <!-- bs5-form-input -->
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label">Họ và Tên</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="hoTen1"
+                  aria-describedby="helpId"
+                  placeholder="Họ và Tên"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Tổng thu nhập năm (triệu)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name=""
+                  id="tongThuNhap"
+                  aria-describedby="helpId"
+                  placeholder="Tổng thu nhập năm"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+              <!-- --------------------------------------------------------------------------------------------------------------------------- -->
+              <div class="mb-3">
+                <label for="txt-luongMotNgay" class="form-label"
+                  >Số người phụ thuộc</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name=""
+                  id="nguoiPhuThuoc"
+                  aria-describedby="helpId"
+                  placeholder="Số người phụ thuộc"
+                />
+                <small id="helpId" class="form-text text-muted"></small>
+              </div>
+              <!-- ----------------------------------------------------------------------------------------------------------------------------->
+              <div class="mb-3">
+                <button class="btn btn-dark" id="btnKetQua4">
+                  Tổng thu nhập
+                </button>
+              </div>
+              <div class="bg-success bg-opacity-50 p-4" id="ketQua4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ----------------------------------------------------------------------------------------------------------------------------->
+      <!-- BÀI TẬP TÍNH tiền cáp -->
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseFive"
+              aria-expanded="false"
+              aria-controls="flush-collapseFive"
+            >
+              <h2>Tính Tiền Cáp</h2>
+            </button>
+          </h2>
+          <div
+            id="flush-collapseFive"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              <!-- bs5-form-input -->
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Loại Khách Hàng</label
+                >
+                <select
+                  id="loaiKH"
+                  class="form-select form-select-sm"
+                  aria-label=".form-select-sm example"
+                >
+                  <option class="loai_KH" selected>Chọn Khách Hàng</option>
+                  <option class="loai_KH" value="DN">Doanh Nghiệp</option>
+                  <option class="loai_KH" value="ND">Nhà Dân</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Mã Khách Hàng</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  name=""
+                  id="maKH"
+                  aria-describedby="helpId"
+                  placeholder="Mã Khách Hàng"
+                />
+                <small id="helpId" class="form-text text-danger d-none"></small>
+              </div>
+
+              <div class="mb-3" id="soKetNoi" style="display: none">
+                <label for="txt-soNgayLam" class="form-label">Số Kết Nối</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  name=""
+                  id="ketNoi"
+                  aria-describedby="helpId"
+                  placeholder="Số Kết Nối"
+                />
+                <small id="helpId" class="form-text text-danger d-none"></small>
+              </div>
+
+              <div class="mb-3" id="soCaoCap">
+                <label for="txt-soNgayLam" class="form-label"
+                  >Số Kênh Cao Cấp</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  name=""
+                  id="kenhCaoCap"
+                  aria-describedby="helpId"
+                  placeholder="Số Kênh Cao Cấp"
+                />
+                <small id="helpId" class="form-text text-danger d-none"></small>
+              </div>
+              <!-- --------------------------------------------------------------------------------------------------------------------------- -->
+
+              <!-- ----------------------------------------------------------------------------------------------------------------------------->
+              <div class="mb-3">
+                <button class="btn btn-dark" id="btnKetQua5">Kết quả</button>
+              </div>
+              <div class="bg-success bg-opacity-50 p-4 mb-5" id="ketQua5"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="./js/style.js"></script>
+  </body>
+</html>
